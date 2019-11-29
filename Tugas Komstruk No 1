@@ -1,1 +1,29 @@
-
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": true,
+    "deletable": true,
+    "editable": true
+   },
+   "outputs": [],
+   "source": [
+    "#Download link: https://www.spoj.com/content/tjandra:stack_queue.ipynb\n",
+    "class ListNode:\n",
+    "    def __init__(self,data):\n",
+    "        self.data=data\n",
+    "        self.next=None\n",
+    "    def __str__(self):\n",
+    "        return('({0},{1})'.format(self.data,self.next))\n",
+    "    def __iter__(self):\n",
+    "        self.now=self\n",
+    "        return self\n",
+    "    def __next__(self):\n",
+    "        if self.now==None:\n",
+    "            raise StopIteration\n",
+    "        else:\n",
+    "            ans=self.now\n",
+    "            self.now=self.now.next\n",
+    "            return ans\n",
